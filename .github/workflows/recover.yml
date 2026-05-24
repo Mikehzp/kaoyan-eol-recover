@@ -1,0 +1,20 @@
+      ─ yaml
+      name: Recover EOL Data
+      on:
+        workflow_dispatch:
+      jobs:
+        recover:
+          runs-on: ubuntu-latest
+          steps:
+            - uses: actions/checkout@v4
+            - name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.11'
+            - name: Run recovery
+              run: python recover_eol.py
+            - name: Upload results
+              uses: actions/upload-artifact@v4
+              with:
+                name: recovered-data
+                path: recovered_data/
