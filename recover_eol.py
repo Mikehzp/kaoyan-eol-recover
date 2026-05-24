@@ -6,7 +6,7 @@
 """
 import json, os, time, re
 
-INDEX = os.path.join(os.path.dirname(__file__), "data_raw/eol_index_full.json")
+INDEX = os.path.join(os.path.dirname(__file__), "eol_index_full.json")
 OUTPUT = os.path.join(os.path.dirname(__file__), "recovered_data")
 os.makedirs(OUTPUT, exist_ok=True)
 
